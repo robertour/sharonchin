@@ -1,11 +1,11 @@
 <?php
-/** single.php
+/** single-news.php
  *
  * The Template for displaying all single posts.
  *
- * @author		Konstantin Obenland
- * @package		sharonchin
- * @since		1.0.0 - 05.02.2012
+ * @author		Roberto Ulloa
+ * @package		Sharon Chin Theme
+ * @since		3.0.0 - 13.03.2014
  */
 
 get_header(); ?>
@@ -38,5 +38,5 @@ get_sidebar('news');
 get_footer();
 
 
-/* End of file index.php */
-/* Location: ./wp-content/themes/sharonchin/single.php */
+/* End of file single-news.php */
+/* Location: ./wp-content/themes/sharonchin/single-news.php */

@@ -1,15 +1,14 @@
 <?php
-/** sidebar.php
+/** sidebar-about.php
  *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0	- 05.02.2012
+ * @since		3.0.0 - 13.03.2014
  */
 
 tha_sidebars_before(); ?>
 <section id="secondary" class="widget-area span4" role="complementary">
 	<?php tha_sidebar_top(); 
-
 
 	$defaults = array(
 		'theme_location'  => '',
@@ -49,5 +48,5 @@ tha_sidebars_before(); ?>
 <?php tha_sidebars_after();
 
 
-/* End of file sidebar.php */
-/* Location: ./wp-content/themes/sharonchin/sidebar.php */
+/* End of file sidebar-about.php */
+/* Location: ./wp-content/themes/sharonchin/sidebar-about.php */

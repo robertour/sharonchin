@@ -4,8 +4,8 @@
  * Template Name: About
  *
  * @author		Roberto Ulloa
- * @package		sharonchin
- * @since		1.0.0 - 14.06.2013
+ * @package		Sharon Chin Theme
+ * @since		3.0.0 - 14.06.2013
  */
 
 get_header(); ?>
@@ -29,5 +29,5 @@ get_sidebar('about');
 get_footer();
 
 
-/* End of file _full_width.php */
-/* Location: ./wp-content/themes/sharonchin/_full_width.php */
+/* End of file page-about.php */
+/* Location: ./wp-content/themes/sharonchin/page-about.php */

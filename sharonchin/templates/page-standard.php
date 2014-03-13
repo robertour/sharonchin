@@ -7,7 +7,7 @@
  *
  * @author		Roberto Ulloa
  * @package		sharonchin
- * @since		1.0.0 - 14.06.2013
+ * @since		3.0.0 - 14.06.2013
  */
 
 get_header(); ?>
@@ -31,5 +31,5 @@ get_sidebar();
 get_footer();
 
 
-/* End of file page.php */
-/* Location: ./wp-content/themes/sharonchin/page.php */
+/* End of file page-standard.php */
+/* Location: ./wp-content/themes/sharonchin/page-standard.php */

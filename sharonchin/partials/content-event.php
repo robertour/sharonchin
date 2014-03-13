@@ -4,8 +4,8 @@
  * The template for displaying event content
  *
  * @author		Roberto Ulloa
- * @package		Sharon Chin
- * @since		1.0.0 - 28.08.2013
+ * @package		Sharon Chin Theme
+ * @since		3.0.0 - 05.03.2013
  */
 
 

@@ -1,11 +1,11 @@
 <?php
-/** content-lilypad.php
+/** content-list-item.php
  *
  * A template for displaying the title and excerpt of the document.
  *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0 - 05.02.2012
+ * @since		3.0.0 - 05.03.2013
  */
 
 
@@ -62,5 +62,5 @@ tha_entry_before(); ?>
 <?php tha_entry_after();
 
 
-/* End of file content.php */
-/* Location: ./wp-content/themes/sharonchin/partials/content.php */
+/* End of file content-list-item.php */
+/* Location: ./wp-content/themes/sharonchin/partials/content-list-item.php */

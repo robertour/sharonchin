@@ -1,9 +1,9 @@
 <?php
-/** sidebar.php
+/** sidebar-shop.php
  *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0	- 05.02.2012
+ * @since		3.0.0 - 13.03.2014
  */
 
 tha_sidebars_before(); ?>
@@ -97,5 +97,5 @@ tha_sidebars_before(); ?>
 <?php tha_sidebars_after();
 
 
-/* End of file sidebar.php */
-/* Location: ./wp-content/themes/sharonchin/sidebar.php */
+/* End of file sidebar-shop.php */
+/* Location: ./wp-content/themes/sharonchin/sidebar-shop.php */

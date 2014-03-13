@@ -3,22 +3,22 @@
  *
  * Displays all of the <head> section and everything up till </header>
  *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0 - 05.02.2012
+ * @since		3.0.0 - 13-03-2014
  */
 
 ?>
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
-		<?php tha_head_top(); ?>
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<title><?php wp_title( '&laquo;', true, 'right' ); ?></title>
-		
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<?php tha_head_top(); ?>
 		<?php tha_head_bottom(); ?>
 		<?php wp_head(); ?>
 	</head>
@@ -53,23 +53,22 @@
 										<span class="icon-bar"></span>
 									</a>
 
-
-
 									<span class="brand"><?php //echo get_bloginfo( 'name' ); ?>
-									<?php if ( sharonchin_options()->navbar_site_name ) : ?>
-									<hgroup>
+
+
+									<?php if ( get_header_image() ) : ?>
+										<a id="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+											<img src="<?php header_image(); ?>" alt="" />
+										</a>
+									<?php else: ?>
+										<hgroup>
 										<h1 id="site-title">
 											<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 												<span><?php bloginfo( 'name' ); ?></span>
 											</a>
 										</h1>
 										<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-									</hgroup>
-									<?php endif;?>
-									<?php if ( get_header_image() ) : ?>
-										<a id="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-											<img src="<?php header_image(); ?>" alt="" />
-										</a>
+										</hgroup>
 									<?php endif; // if ( get_header_image() ) ?>
 									</span>
 
@@ -81,9 +80,13 @@
 											'fallback_cb'		=>	false,
 											'walker'			=>	new SharonChin_Nav_Walker,
 										) ); 
+										if ( sharonchin_options()->navbar_site_name ) : ?>
+											<span><?php bloginfo( 'name' ); ?></span>
+										<?php endif;
 										if ( sharonchin_options()->navbar_searchform ) {
 											sharonchin_navbar_searchform();
 										} ?>
+										
 								    </div>
 								</div>
 							</div>

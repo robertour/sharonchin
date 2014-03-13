@@ -5,9 +5,9 @@
  *
  * Learn more: http://codex.wordpress.org/Post_Formats
  *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0 - 07.02.2012
+ * @since		3.0.0 - 05.03.2013
  */
 
 tha_entry_before(); ?>

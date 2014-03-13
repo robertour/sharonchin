@@ -5,7 +5,7 @@
  *
  * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0 - 01.10.2013
+ * @since		3.0.0 - 01.10.2013
  */
 
 get_header(); ?>

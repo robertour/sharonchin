@@ -11,8 +11,8 @@
  * different template.
  *
  * @author		Roberto Ulloa
- * @package		Sharon Chin
- * @since		1.0.0 - 07.09.2013
+ * @package		Sharon Chin Theme
+ * @since		3.0.0 - 07.09.2013
  */
 
 get_header(); ?>

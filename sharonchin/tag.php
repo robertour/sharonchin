@@ -5,7 +5,7 @@
  *
  * @author		Roberto Ulloa
  * @package		sharonchin
- * @since		1.0.0 - 01/10/2013
+ * @since		1.0.0 - 01.10.2013
  */
 
 get_header(); ?>

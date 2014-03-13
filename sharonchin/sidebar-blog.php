@@ -1,7 +1,7 @@
 <?php
 /** sidebar-blog.php
  *
- * @author		Roberto Ulla
+ * @author		Roberto Ulloa
  * @package		sharonchin
  * @since		1.0.0	- 05.02.2013
  */

@@ -1,16 +1,11 @@
 <?php
-/** page.php
+/** woocommerce.php
  *
- * The template for displaying all pages.
+ * Woocommerce base.
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0 - 07.02.2012
+ * @since		3.0.0 - 13-03-2014
  */
 
 get_header(); ?>
@@ -34,5 +29,5 @@ get_header(); ?>
 get_sidebar('shop');
 get_footer();
 
-/* End of file page.php */
-/* Location: ./wp-content/themes/sharonchin/page.php */
+/* End of file woocommerce.php */
+/* Location: ./wp-content/themes/sharonchin/woocommerce.php */

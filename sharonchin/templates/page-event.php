@@ -4,8 +4,8 @@
  * Template Name: Event
  *
  * @author		Roberto Ulloa
- * @package		sharonchin
- * @since		1.0.0 - 14.06.2013
+ * @package		Sharon Chin Theme
+ * @since		3.0.0 - 14.06.2013
  */
 
 get_header(); ?>
@@ -77,5 +77,5 @@ get_header(); ?>
 get_footer();
 
 
-/* End of file page.php */
-/* Location: ./wp-content/themes/sharonchin/page.php */
+/* End of file page-event.php */
+/* Location: ./wp-content/themes/sharonchin/page-event.php */

@@ -1,11 +1,11 @@
 <?php
-/** single.php
+/** single-archive.php
  *
  * The Template for displaying all single posts.
  *
- * @author		Konstantin Obenland
- * @package		sharonchin
- * @since		1.0.0 - 05.02.2012
+ * @author		Roberto Ulloa
+ * @package		Sharon Chin Theme
+ * @since		3.0.0 - 13.03.2014
  */
 
 
@@ -77,5 +77,5 @@ if ( $format_type === 'side-bar-page' ) {
 get_footer();
 
 
-/* End of file index.php */
-/* Location: ./wp-content/themes/sharonchin/single.php */
+/* End of file single-archive.php */
+/* Location: ./wp-content/themes/sharonchin/single-archive.php */

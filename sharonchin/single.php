@@ -3,9 +3,9 @@
  *
  * The Template for displaying all single posts.
  *
- * @author		Konstantin Obenland
- * @package		sharonchin
- * @since		1.0.0 - 05.02.2012
+ * @author		Roberto Ulloa
+ * @package		Sharon Chin Theme
+ * @since		3.0.0 - 13.03.2014
  */
 
 get_header(); ?>

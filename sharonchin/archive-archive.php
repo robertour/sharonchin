@@ -1,5 +1,5 @@
 <?php
-/** archive-blog.php
+/** archive-archive.php
  *
  * The template for displaying Archive pages.
  *
@@ -10,7 +10,7 @@
  *
  * @author		Konstantin Obenland
  * @package		Sharon Chin Theme
- * @since		1.0.0 - 07.02.2012
+ * @since		3.0.0 - 13-03-2014
  */
 
 get_header(); ?>
@@ -54,5 +54,5 @@ get_sidebar('archive');
 get_footer();
 
 
-/* End of file archive.php */
-/* Location: ./wp-content/themes/sharonchin/archive.php */
+/* End of file archive-archive.php */
+/* Location: ./wp-content/themes/sharonchin/archive-archive.php */

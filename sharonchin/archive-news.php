@@ -1,16 +1,16 @@
 <?php
 /** archive-blog.php
  *
- * The template for displaying Archive pages.
+ * The template for displaying News pages.
  *
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0 - 07.02.2012
+ * @since		3.0.0 - 13-03-2014
  */
 
 get_header(); ?>
@@ -43,5 +43,5 @@ get_sidebar('news');
 get_footer();
 
 
-/* End of file archive.php */
-/* Location: ./wp-content/themes/sharonchin/archive.php */
+/* End of file archive-blog.php */
+/* Location: ./wp-content/themes/sharonchin/archive-blog.php */

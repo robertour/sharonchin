@@ -3,9 +3,9 @@
  *
  * The default template for displaying content
  *
- * @author		Konstantin Obenland
+ * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		1.0.0 - 05.02.2012
+ * @since		3.0.0 - 05.03.2013
  */
 
 
