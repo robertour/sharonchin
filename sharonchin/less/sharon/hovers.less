@@ -1,0 +1,110 @@
+@media (min-width: 768px) {
+
+	.dropdown-menu > .menu-item:first-child{
+	margin-top: 40px;
+	}
+	.ARCHIVE .dropdown-menu > .menu-item:first-child{
+	margin-top: 25px;
+	}
+
+	.navbar .nav > li > .dropdown-menu:before,
+	.navbar .nav > li > .dropdown-menu:after {
+	display: none;
+	border: 0;
+	}
+
+	header .navbar .nav li > .dropdown-toggle .caret {
+	border: 0;
+	}
+
+
+	header .navbar .nav > li.BLOG > a:hover:after,
+	header .navbar .nav > li.active.BLOG > a:after {
+	content:'';
+	position:absolute;
+	width: 64px;
+	height: 42px;
+	top: -2px;
+	left: 3px;
+	background: transparent url('../img/hover_blog.png') no-repeat center center;
+	}
+
+	header .navbar .nav > li.NEWS > a:hover:after,
+	header .navbar .nav > li.active.NEWS > a:after {
+	content:'';
+	position:absolute;
+	width: 79px;
+	height: 38px;
+	top: 3px;
+	left: 2px;
+	background: transparent url('../img/hover_news.png') no-repeat center center;
+	}
+
+	header .navbar .nav > li.SHOP > a:hover:after,
+	header .navbar .nav > li.active.SHOP > a:after,
+	header .navbar .nav > li.open.SHOP > a:after  {
+	content:'';
+	position:absolute;
+	width: 64px;
+	height: 39px;
+	top: -8px;
+	left: 4px;
+	background: transparent url('../img/hover_shop.png') no-repeat center center;
+	}
+
+	header .navbar .nav > li.ARCHIVE > a:hover:after,
+	header .navbar .nav > li.active.ARCHIVE > a:after,
+	header .navbar .nav > li.open.ARCHIVE > a:after {
+	content:'';
+	position:absolute;
+	width: 100px;
+	height: 50px;
+	border: 0;
+	top: -15px;
+	left: 0px;
+	background: transparent url('../img/hover_archive.png') no-repeat center center;
+	}
+
+	header .navbar .nav > li.ABOUT > a:hover:after,
+	header .navbar .nav > li.active.ABOUT > a:after ,
+	header .navbar .nav > li.open.ABOUT > a:after,
+	header .navbar .nav > li.current-page-ancestor.ABOUT > a:after  {
+	
+	content:'';
+	position:absolute;
+	width: 72px;
+	height: 40px;
+	top: 0px;
+	left: 5px;
+	background: transparent url('../img/hover_about.png') no-repeat center center;
+	}
+
+
+	header .navbar .pull-right > li.SHOP > .dropdown-menu, 
+	header .navbar .nav > li.SHOP > .dropdown-menu.pull-right{
+	background: transparent url('../img/dropdown_about.png') no-repeat center center;
+	width: 149px;
+	height: 137px;
+	top: 28px;
+	right: -23px;
+	}
+
+	header .navbar .pull-right > li.ARCHIVE > .dropdown-menu, 
+	header .navbar .nav > li.ARCHIVE > .dropdown-menu.pull-right{
+	background: transparent url('../img/dropdown_archive.png') no-repeat center center;
+	width: 177px;
+	height: 281px;
+	top: 28px;
+	right: -16px;
+	}
+
+	header .navbar .pull-right > li.ABOUT > .dropdown-menu, 
+	header .navbar .nav > li.ABOUT > .dropdown-menu.pull-right{
+	background: transparent url('../img/dropdown_about.png') no-repeat center center;
+	width: 149px;
+	height: 137px;
+	top: 37px;
+	right: -15px;
+	}
+
+}

@@ -1,0 +1,70 @@
+#page {
+border-left: 2px solid black;
+border-right: 2px solid black;
+background-color: #FFFFFF;
+margin-right: -@gridSideMargins;
+margin-left: -@gridSideMargins;
+padding: 0px;
+
+}
+
+body.custom-background{
+background: url('../img/background.png') repeat-y bottom center;
+}
+
+body > .container {
+margin: 0px auto;
+background-color: transparent;
+}
+
+.sidebar-content #primary .content {
+padding: @gridInternalBorders @gridInternalBorders 0;
+border-left: 1px solid #CCC;
+}
+
+.content-sidebar #primary .content {
+padding: @gridInternalBorders @gridInternalBorders 0 0;
+border-right: 1px solid #CCC;
+}
+
+
+.sidebar-content #primary .content.nomargin {
+padding-right: 0;
+}
+
+.content-sidebar #primary .content.nomargin {
+padding-left: 0;
+}
+
+/* Right Content */
+.sidebar-content  #primary,
+.sidebar-content  #attachment-comment {
+float: right;
+margin-right: 0;
+}
+
+.content-sidebar #primary,
+.content-sidebar #attachment-comment {
+float: left;
+margin-left: 0;
+}
+
+body .single p {
+margin-bottom: 20px;
+}
+body #primary .single a.thumbnail {
+margin: 20px 0;
+}
+
+body #secondary {
+width: 185px;
+padding-top: @gridInternalBorders;
+}
+
+.sidebar-content #secondary {
+margin-left: @gridSideMargins;
+}
+
+.content-sidebar #primary {
+margin-left: @gridSideMargins;
+}

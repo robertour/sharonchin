@@ -1,0 +1,214 @@
+@media (min-width: 768px) and (max-width: 979px) {
+
+	/* Big Pages */
+	body {
+	font-size: 12px;
+	line-height: 16px;
+	}
+	#page, #colophon, .navbar-inverse .navbar-inner, .navbar-inner {
+	margin-left: -@gridSideMargins768;
+	margin-right: -@gridSideMargins768;
+	}
+
+	/* Main Nav bar */
+	.navbar-inner, .navbar-inverse .navbar-inner {
+	margin: 0px @gridSideMargins768;
+	padding: (@gridInternalBorders768 - 10px) 0;
+	}
+	.menu-main_menu-container ul{
+	font-size: 14px;
+	}
+
+	/* Sidebars */
+	.sidebar-content #primary,
+	.sidebar-content #attachment-comment {
+	margin-right: @gridSideMargins768;
+	width: @gridRowWidth768 - 139px - @gridInternalBorders768 - 10px;
+	}
+	.content-sidebar #primary,
+	.content-sidebar #attachment-comment {
+	margin-left: @gridSideMargins768;
+	width: @gridRowWidth768 - 139px - @gridInternalBorders768 - 10px;
+	}
+	
+	.sidebar-content #primary .content {
+	padding: @gridInternalBorders768 0 0 @gridInternalBorders768;
+	}
+	.content-sidebar #primary .content {
+	padding: @gridInternalBorders768  @gridInternalBorders768 0 0;
+	}
+	
+	.sidebar-content #secondary {
+	margin-left: @gridSideMargins768;
+	padding-top: @gridInternalBorders768;
+	width: 139px;
+	}
+	.content-sidebar #secondary {
+	margin-left: @gridInternalBorders768;
+	padding-top: @gridInternalBorders768;
+	width: 139px;
+	}
+	
+	#secondary aside.well {
+	margin-bottom: @gridGutterWidth768;
+	padding-bottom: @gridGutterWidth768;
+	}
+	#social_media img {
+	width: 23px;
+	}
+
+	/* Archive */
+	.fullpage-content {
+	margin: @gridSideMargins768 @gridSideMargins768 @gridSideMargins768 @gridSideMargins768 - 4px;
+	}
+	#archive-category li:last-child a{
+	margin-top: @gridGutterWidth768/2;
+	}
+	.archive-container{
+	margin-right: 10px;
+	}
+	
+	/* Event */
+	.event.fullpage-content {
+	margin: @gridInternalBorders768 @gridSideMargins768 @gridSideMargins768 @gridSideMargins768;
+	}
+	.event .special.span3 {
+	width:200px;
+	}
+	.event .special.offset1 {
+	margin-left:62px;
+	}
+
+
+	/* Spacers */
+	.top-splitter {
+	margin-top: @gridGutterWidth768;
+	padding-top: @gridGutterWidth768;
+	}
+	.bottom-splitter {
+	margin-bottom: @gridGutterWidth768;
+	padding-bottom: @gridGutterWidth768;
+	}
+	.top-spacer {
+	margin-top: @gridGutterWidth768;
+	}
+	.bottom-spacer {
+	margin-bottom: @gridGutterWidth768;
+	}
+
+	/* Masonry */
+	#masonry .lilypad {
+	width: 257px;
+	}
+	#masonry .lilypad article {
+	margin-bottom: @gridGutterWidth768;
+	}
+	#masonry .caption {
+	padding: 10px;
+	}
+	#masonry .caption h3{
+	font-size: 16px;
+	}
+
+	/* Media */
+	.media-body{
+	font-size:11px;
+	}
+	.media-body.has_image{
+	height: @archive_crop_height768 + 10px;
+	}
+	.media-header a{
+	font-size:13px;
+	}
+	.media-content.has_image{
+	height: @archive_crop_height768 - 40px;
+	}
+	.media .pull-left {
+	margin-right: @gridInternalBorders768;
+	}
+	.media .crop{
+	width: @archive_crop_width768;
+	height: @archive_crop_height768;
+	}
+	.media .crop img{
+	min-width: @archive_crop_width768;
+	}
+	article .archive-thumbnail{
+	padding-top: @gridInternalBorders768;
+	margin-top: @gridInternalBorders768;
+	}
+	article:last-of-type .archive-thumbnail{
+	margin-bottom: @gridInternalBorders768;
+	}
+
+	/* Pagination */
+	.pager{
+	margin: @gridInternalBorders768; 
+	padding-top: @gridGutterWidth768;
+	font-size: 12px;
+	}
+	.pagination ul > li > a,
+	.pagination ul > li > span {
+	font-size:14px;
+	}
+	#end-page1{
+	border-right-width: (@gridPageWidth768 - 2px);
+	}
+	#end-page2{
+	border-right-width: (@gridPageWidth768);
+	}
+	#archive .pager{
+	margin: @gridInternalBorders768 0; 
+	}
+
+	/* Borders */
+	#top-left-black, #top-left-white{
+	border-width: 20px 424px 0px 0px;
+	}
+	#top-right-black, #top-right-white{
+	left: 524px;
+	}
+	#bottom-black, #bottom-white {
+	border-right-width: (@gridPageWidth768 - 2px);
+	}
+
+	/* Footer */
+	#colophon .nav-pills > li{
+	padding: 0 20px;
+	}
+	#colophon .nav-list {
+	padding-left: 20px;
+	}
+	#colophon #licence{
+	position: absolute;
+	width: 120px;
+	bottom: 30px;
+	right: 30px;
+	font-size: 8px;
+	}
+	#colophon .credit-links{
+	width: 120px;
+	bottom: 120px;
+	right: 30px;
+	line-height: 1.3;
+	font-size: 10px;
+	}
+}
+
+@media (min-width: 768px) {
+	.blog #secondary > aside.personal-statement,
+	.single-post #secondary > aside.personal-statement{
+	padding: 0;
+	border: 0;
+	}
+}
+
+@media (max-width: 979px) {
+	/* Navigation */
+	.nav-pills > li > a, aside .menu > li > a {
+	margin: 4px 0px 0;
+	}
+	#header-image img{
+	width: 225px;
+	}
+}

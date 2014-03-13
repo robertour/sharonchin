@@ -1,0 +1,129 @@
+@media (max-width: 419px){
+	/* General */
+	body.custom-background {
+	background: 0;
+	background-color: white;
+	}
+	body > .container {
+	padding: 0;
+	background-color: white;
+	}
+	#page {
+	margin: 0;
+	border: 0;
+	padding-bottom: 65px;
+	}
+
+	/* Content */
+	.sidebar-content #primary .single a.thumbnail {
+		margin: 0;
+	}
+
+	/* Header */
+	#header-image img {
+	max-width: 130px;
+	}
+	
+	/* Masonry */
+	#masonry .lilytext{
+	padding: 5px;
+	}
+	#masonry .lilytext h3{
+	font-size: 14px;
+	}
+	.lilyimage{
+	text-align: center;
+	padding: 5px;
+	}
+	
+	
+	/* Widgets and Wells */
+	#secondary aside.well{
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	}
+	
+	/* Pagination */
+/*	.pagination ul > li {*/
+/*	display:none;*/
+/*	}
+/*	.pagination ul > li:first-child, */
+/*	.pagination ul > li:last-child {*/
+/*	display:block;*/
+/*	}*/
+	.pagination ul > li > a, .pagination ul > li > span {
+	display:none;
+	}
+	.pagination a.prev,.pagination a.next{
+	display:block;
+	padding: 0px;
+	}
+
+	.pagination ul > li {
+	padding: 0;
+	border:0;
+	}
+
+
+	/* Footer */
+	#colophon {
+	display: none;
+	}
+	#licence420px{
+	display: block;
+	margin-top: -30px;
+	text-align: right;
+	margin-right: 5px;
+	}
+	#credits420px{
+	display: block;
+	margin-top: -14px;
+	font-size: 10px;
+	margin-left: 5px;
+	}
+	#credits420px a{
+	color: #666;
+	}
+
+	/* Media */
+	.media .crop {
+	float: none;
+	width: auto;
+	height: auto;
+	}
+	.media .thumbnail{
+	margin-right: 0;
+	}
+	.media .crop img {
+	width: 100%;
+	}
+	.media-body,
+	.media-body.has_image,
+	.media-content.has_image,
+	.media-content.has_image .media-bottom{
+	width: 100%;
+	height: auto;
+	position: static;
+	position: static;
+	max-height:100%;
+	}
+}
+
+@media (min-width: 420px)  and (max-width: 480px) {
+  // Medias
+  // Reset float and spacing to stack
+  .media .pull-left,
+  .media .pull-right  {
+    float: left;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 320px){
+#credits420px{
+margin: 3px 5px 0 0;
+line-height: 1.5;
+text-align: right;
+}
+}

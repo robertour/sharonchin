@@ -1,0 +1,127 @@
+@media (min-width: 767px) {
+
+	.bordener{
+	position: relative;
+	float: left;
+	width: 100%;
+	}
+
+	.borderdraw{
+	-moz-transform: scale(.9999);
+	position: absolute;
+	padding: 0;
+	line-height: 0px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	}
+
+	#end-page{
+	margin-top: @gridSideMargins;
+	margin-left: -2px;
+	border-right: 2px solid black;
+	}
+
+	#end-page1{
+	border-color: yellow white transparent red;
+	border-width: 0px (@gridPageWidth - 2px) 25px 0px;
+	z-index: 1;
+	}
+
+	#end-page2{
+	border-color: yellow black transparent red;
+	height: 2px;
+	border-width: 0px (@gridPageWidth) 25px 0px;
+	}
+
+
+	#top-left-black, #top-left-white{
+	left:100px;
+	border-color: transparent black green red;
+	border-width: 20px 609px 0px 0px;
+	}
+	#top-left-black{
+	height: 2px;
+	}
+	#top-left-white{
+	top: 2px;
+	border-color: transparent white green red;
+	}
+
+	#top-right-black, #top-right-white{
+	left: 708px;
+	border-color: transparent green blue black;
+	border-width: 20px 0px 0px 201px;
+	}
+	#top-right-black{
+	height: 2px;
+	}
+	#top-right-white{
+	top: 2px;
+	border-color: transparent green blue white;
+	}
+
+	#left-black{
+	top: 20px;
+	width: 2px;
+	border-color: blue green black transparent;
+	border-width: 0px 0px 320px 100px;
+	}
+
+	#left-white{
+	top: 20px;
+	left: 2px;
+	border-color: black green white transparent;
+	border-width: 0px 0px 320px 100px;
+	}
+
+	#bottom-black, #bottom-white {
+	bottom: 0px;
+	border-color: blue black transparent yellow;
+	border-width: 0px (@gridPageWidth - 2px) 20px 0px;
+	}
+
+	#bottom-black {
+	height: 2px;
+	}
+
+	#bottom-white {
+	bottom: 2px;
+	border-color: blue white transparent yellow;
+	}
+
+
+	#right-center-black {
+	right: 0px;
+	top: 20px;
+	width: 2px;
+	border-color: blue transparent black yellow;
+	border-width: 0 60px 140px 0px;
+	}
+
+	#right-center-white {
+	right: 2px;
+	top: 20px;
+	border-color: blue transparent white yellow;
+	border-width: 0 60px 140px 0px;
+	}
+
+	#right-fill-box {
+	right: 0px;
+	top: 160px;
+	height: 180px;
+	border: 0;
+	border-right: 2px solid black;
+	width:60px;
+	background-color: white;
+	}
+
+	#right-line {
+	right: 0px;
+	top: 340px;
+	height: 20px;
+	border: 0;
+	border-right: 2px solid black;
+	}
+}
+

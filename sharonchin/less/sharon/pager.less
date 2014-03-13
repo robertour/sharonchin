@@ -1,0 +1,46 @@
+.pager {
+margin: @gridInternalBorders; 
+padding-top: @gridGutterWidth;
+border-top: 1px solid #ccc;
+font-size: 14px;
+text-align: right;
+}
+#archive .pager{
+margin: @gridInternalBorders 0; 
+}
+
+.pager .next > a,
+.pager .next > span,
+.pager .previous > a,
+.pager .previous > span {
+float: none;
+}
+
+.pager .previous, .pager .home{
+border-right: 2px solid black;
+}
+.pager .next {
+float: none;
+border-left: 2px solid black;
+}
+
+.pager span{
+padding: 0 12px;
+}
+.pager span:last-of-type{
+padding-right: 0;
+}
+
+.pager span > a,
+.pager span > span {
+font-weight: bold;
+}
+
+.pager span > a {
+padding-bottom: 2px;
+border-bottom: 2px solid transparent;
+}
+.pager span > a:hover{
+text-decoration: none;
+border-bottom: 2px solid black;
+}

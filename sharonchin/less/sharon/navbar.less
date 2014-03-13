@@ -1,0 +1,74 @@
+
+.navbar {
+	margin-bottom: 0;
+}
+
+// Inner for background effects
+// Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
+.navbar-inner, .navbar-inverse .navbar-inner {
+	.border-radius(none);
+	.box-shadow(none);
+	#gradient > .vertical(#ffffff, #ffffff);
+	border-bottom: 1px solid @grayBorder;
+	margin: 0px @gridSideMargins 0;
+	padding: (@gridInternalBorders - 10px) 0;
+	border-bottom: 1px solid #cccccc;
+	background-image: none;
+}
+
+
+// Brand: website or project name
+.navbar .brand {
+/*	padding: ((@navbarHeight - @baseLineHeight) / 2) 30px ((@navbarHeight - @baseLineHeight) / 2);*/
+	padding: 0;
+	margin: 0;
+	font-size: 48px;
+	line-height: .8;
+	font-weight: bolder;
+}
+
+.navbar .brand #site-description{
+color:black;
+text-shadow: none;
+}
+
+.navbar .nav > li > a {
+	padding: 0;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
+	text-shadow: none;
+	
+}
+
+.navbar .nav > li {
+	padding: 0;
+	margin: 10px 15px;
+}
+
+
+// Active nav items
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus,
+.navbar .nav > .current-page-ancestor > a,
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	color: @navbarLinkColorActive;
+	text-decoration: none;
+	background-color: transparent;
+	border-bottom: 2px solid black;
+	.box-shadow(none);
+}
+
+@media (min-width: 768px) {
+	.nav-collapse {
+	margin-top: 46px;
+	}
+	.menu-main_menu-container ul{
+	font-size: 16px;
+	font-weight: bold;
+	margin-right: -15px;
+	}
+}
+
+
