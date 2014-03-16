@@ -22,10 +22,13 @@ To take advantage of all the possibilites Bootstrap has to offer, Bootstrap requ
 = License =
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public Licemse.
 The exceptions to this license are as follows:
-* Bootstrap by Twitter and the Glyphicon set are licensed under the GPL-compatible [http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0]
+* Bootstrap by Twitter are licensed under the GPL-compatible 
+[Apache License 2](http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0)
 * html5shiv is licensed under MIT
 * masonry is licensed under MIT
-* Respond.js: Copyright 2011: Scott Jehl, scottjehl.com. Dual licensed under the MIT or GPL Version 2 licenses.
+* less.js is licensed under [Apache License 2](http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0)
+* Respond.js: Copyright 2011: Scott Jehl, scottjehl.com. Dual licensed under 
+the MIT or GPL Version 2 licenses.
 
 = Translations =
 Currently available in:
