@@ -103,7 +103,7 @@ add_action( 'customize_register', 'sharonchin_customize_register' );
  * @return	void
  */
 function sharonchin_customize_enqueue_scripts() {
-	wp_enqueue_script( 'sharonchin-customize', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), _sharonchin_version(), true );
+	wp_enqueue_script( 'sharonchin-customize', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), sharonchin_version(), true );
 	wp_localize_script( 'sharonchin-customize', 'sharonchin_customize', array(
 		'sitename'		=>	get_bloginfo( 'name', 'display' ),
 		'searchform'	=>	sharonchin_navbar_searchform( false )

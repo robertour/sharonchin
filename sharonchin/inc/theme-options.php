@@ -39,7 +39,7 @@ add_action( 'admin_menu', 'sharonchin_theme_options_add_page' );
  * @return	void
  */
 function sharonchin_admin_enqueue_scripts( $hook_suffix ) {
-	wp_enqueue_style( 'sharonchin-theme-options', get_template_directory_uri() . '/css/theme-options.css', false, _sharonchin_version() );
+	wp_enqueue_style( 'sharonchin-theme-options', get_template_directory_uri() . '/css/theme-options.css', false, sharonchin_version() );
 }
 
 

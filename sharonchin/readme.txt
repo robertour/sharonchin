@@ -11,7 +11,7 @@ A WordPress Theme based on Bootstrap, from Twitter
 
 The Theme is 100% responsive - you do not need a seperate mobile-Theme with this layout.
 It has a seperate Sidebar just for image pages, to make it a special place to show your pictures!
-Sharon Chin Theme is fully compatible with WordPress SEO by Yoast! and Woocommerce
+Sharon Chin Theme is fully compatible with WordPress SEO by Yoast!
 
 Please note:
 
@@ -77,7 +77,6 @@ This are the major inclusions to this theme:
 * Updated Twitter Bootstrap to 2.3.2
 * Inclusion of masory.js:  http://masonry.desandro.com/
 * Support for two Custom Post Types: news and archive. There is a plugin in https://github.com/robertour/sharonchin. 
-* Support for Woocommerce
 * CSS less files included
 
 = 2.0.1 =

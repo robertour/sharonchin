@@ -29,8 +29,6 @@ function sharonchin_setup() {
 	
 	add_theme_support( 'post-thumbnails' );
 	
-	add_theme_support( 'woocommerce' );
-
 	add_theme_support( 'tha_hooks', array( 'all' ) );
 
 	if ( version_compare( get_bloginfo( 'version' ), '3.4', '<' ) )
@@ -95,7 +93,7 @@ add_action( 'after_setup_theme', 'sharonchin_setup' );
 /**
 More sizes options to insert in blog posts_per_page
 **/
-function my_insert_custom_image_sizes( $sizes ) {
+function sharonchin_insert_custom_image_sizes( $sizes ) {
   global $_wp_additional_image_sizes;
   if ( empty($_wp_additional_image_sizes) )
     return $sizes;
@@ -107,7 +105,7 @@ function my_insert_custom_image_sizes( $sizes ) {
 
   return $sizes;
 }
-add_filter( 'image_size_names_choose', 'my_insert_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'sharonchin_insert_custom_image_sizes' );
 
 
 /**
@@ -287,13 +285,9 @@ add_action( 'widgets_init', 'sharonchin_widgets_init' );
 function sharonchin_register_scripts_styles() {
 
 	if ( ! is_admin() ) {
-		$theme_version = _sharonchin_version();
+		$theme_version = sharonchin_version();
 		$suffix = ( defined('SCRIPT_DEBUG') AND SCRIPT_DEBUG ) ? '' : '.min';
 		$bootstrap_css_dependencies = array();
-		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-			$bootstrap_css_dependencies = array('woocommerce_frontend_styles');
-		}
-		
 		
 		/**
 		 * Scripts
@@ -426,7 +420,7 @@ add_action( 'wp_enqueue_scripts', 'sharonchin_print_scripts' );
  *
  * @return	void
  */
-function enqueue_less_styles($tag, $handle) {
+function sharonchin_enqueue_less_styles($tag, $handle) {
 	global $wp_styles;
 	$match_pattern = '/\.less$/U';
 	if ( preg_match( $match_pattern, $wp_styles->registered[$handle]->src ) ) {
@@ -439,7 +433,7 @@ function enqueue_less_styles($tag, $handle) {
 	}
 	return $tag;
 	}
-add_filter( 'style_loader_tag', 'enqueue_less_styles', 5, 2);
+add_filter( 'style_loader_tag', 'sharonchin_enqueue_less_styles', 5, 2);
 
 /**
  * Adds IE specific scripts
@@ -478,10 +472,10 @@ function sharonchin_comment_reply() {
 add_action( 'comment_form_before', 'sharonchin_comment_reply' );
 
 
-function my_theme_add_editor_styles() {
+function sharonchin_add_editor_styles() {
 	add_editor_style( 'custom-editor-style.css' );
 }
-add_action( 'init', 'my_theme_add_editor_styles' );
+add_action( 'init', 'sharonchin_add_editor_styles' );
 
 /**
  * Properly enqueue frontend styles
@@ -1015,8 +1009,6 @@ function sharonchin_post_gallery( $content, $attr ) {
 		return $output;
 	}
 	
-	
-
 	$itemtag	=	tag_escape( $itemtag );
 	$captiontag	=	tag_escape( $captiontag );
 	$columns	=	intval( min( array( 8, $columns ) ) );
@@ -1194,7 +1186,7 @@ add_action( 'template_redirect', 'sharonchin_content_width' );
  *
  * @return	string	Sharon Chin Theme version
  */
-function _sharonchin_version() {
+function sharonchin_version() {
 	
 	if ( function_exists( 'wp_get_theme' ) ) {
 		$theme_version	=	wp_get_theme()->get( 'Version' );
@@ -1212,7 +1204,7 @@ function _sharonchin_version() {
  * Register the archive taxonomy
  * @author	Roberto Ulloa
  */
-function archive_custom_taxonomies(){
+function sharonchin_archive_custom_taxonomies(){
 	register_taxonomy(
 		'archive',
 		'archive',
@@ -1236,7 +1228,7 @@ function archive_custom_taxonomies(){
 		)
 	);
 }
-add_action('init', 'archive_custom_taxonomies', 0);
+add_action('init', 'sharonchin_archive_custom_taxonomies', 0);
 
 /**
  * Add 'active' when we are in the archive of news or menu
@@ -1246,8 +1238,8 @@ add_action('init', 'archive_custom_taxonomies', 0);
  *
  * @return wp_rewrite Rewrite rules handled by Wordpress
  */
-add_filter( 'nav_menu_css_class', 'add_custom_class', 10, 2 );
-function add_custom_class( $classes = array(), $menu_item = false ) {
+add_filter( 'nav_menu_css_class', 'sharonchin_add_custom_class', 10, 2 );
+function sharonchin_add_custom_class( $classes = array(), $menu_item = false ) {
 
     global $wp_query;
 
@@ -1280,20 +1272,20 @@ function add_custom_class( $classes = array(), $menu_item = false ) {
  *
  * @return void
  */
-function wpse_71157_parse_query( $wp_query )
+function sharonchin_wpse_71157_parse_query( $wp_query )
 {
 	if ( $wp_query->is_post_type_archive && $wp_query->is_tax )
 		$wp_query->is_post_type_archive = false;
 }
-add_action( 'parse_query', 'wpse_71157_parse_query' );
+add_action( 'parse_query', 'sharonchin_wpse_71157_parse_query' );
 
 
 /**
  * Rewrite the permalink for archive to include the archive taxonoamy
  * @return $permalink The pretty-url of the post
  */
-add_filter( 'post_type_link', 'custom_post_permalink', 10, 4 );
-function custom_post_permalink( $permalink, $post, $leavename, $sample ) {
+add_filter( 'post_type_link', 'sharonchin_custom_post_permalink', 10, 4 );
+function sharonchin_custom_post_permalink( $permalink, $post, $leavename, $sample ) {
 
     // only do our stuff if we're using pretty permalinks
     // and if it's our target post type
@@ -1354,14 +1346,14 @@ function custom_post_permalink( $permalink, $post, $leavename, $sample ) {
  * Custom post type specific rewrite rules
  * @return wp_rewrite Rewrite rules handled by Wordpress
  */
-function cpt_rewrite_rules($wp_rewrite) {
-	$rules = cpt_generate_date_archives('news', $wp_rewrite);
-	$rules = $rules + cpt_generate_date_archives('archive', $wp_rewrite);
+function sharonchin_cpt_rewrite_rules($wp_rewrite) {
+	$rules = sharonchin_cpt_generate_date_archives('news', $wp_rewrite);
+	$rules = $rules + sharonchin_cpt_generate_date_archives('archive', $wp_rewrite);
 	$wp_rewrite->rules = $rules + $wp_rewrite->rules;
 	echo '<div id="message" class="updated"><p><h1>Date Archive Rules Re-Generated</h1></p></div>';
 	return $wp_rewrite;
 }
-add_action('generate_rewrite_rules', 'cpt_rewrite_rules');
+add_action('generate_rewrite_rules', 'sharonchin_cpt_rewrite_rules');
 
 
 /**
@@ -1369,7 +1361,7 @@ add_action('generate_rewrite_rules', 'cpt_rewrite_rules');
  * @param  string $cpt		slug of the custom post type
  * @return rules			  returns a set of rewrite rules for Wordpress to handle
  */
-function cpt_generate_date_archives($cpt, $wp_rewrite) {
+function sharonchin_cpt_generate_date_archives($cpt, $wp_rewrite) {
 	$rules = array();
 
 	$post_type = get_post_type_object($cpt);
@@ -1390,9 +1382,6 @@ function cpt_generate_date_archives($cpt, $wp_rewrite) {
 			'rule' => "([0-9]{4})",
 			'vars' => array('year'))
 		);
-
-
-
 
 	$rules[$slug_archive."/?$"] = 'index.php?post_type='.$slug_archive;
 
@@ -1435,64 +1424,6 @@ function cpt_generate_date_archives($cpt, $wp_rewrite) {
 #	}
 
 	return $rules;
-}
-
-/**
- * Makes the phone field on woo-commerce not required.
- * @author	Roberto Ulloa
- * @since	1.0.0 - 10.10.2013
- */
-add_filter( 'woocommerce_billing_fields', 'wc_npr_filter_phone', 10, 1 );
- 
-function wc_npr_filter_phone( $address_fields ) {
-	$address_fields['billing_phone']['required'] = false;
-	echo "";
-	return $address_fields;
-}
-
-/**
- * Change number or products per row to 3
- * @author	Roberto Ulloa
- * @since	1.0.0 - 20.11.2013
- */
-add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns')) {
-	function loop_columns() {
-		return 3; // 3 products per row
-	}
-}
-
-/**
- * Remove the related products action of the Woocommerce.
- *
- * @author	Roberto Ulloa
- * @since	1.0.0 - 10.12.2013
- */
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-
-
-add_filter ( 'woocommerce_product_thumbnails_columns', 'xx_thumb_cols' );
-function xx_thumb_cols() {
-	return 10; // .last class applied to every 4th thumbnail
-}
-
-add_filter('add_to_cart_fragments', 'header_add_to_cart_fragment');
-function header_add_to_cart_fragment( $fragments ) {
-	global $woocommerce;
-	ob_start();
-	woocommerce_cart_link();
-	$fragments['a.cart-button'] = ob_get_clean();
-	return $fragments;
-}
-function woocommerce_cart_link() {
-	global $woocommerce;
-	?>
-	<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> <?php _e('in your shopping cart', 'woothemes'); ?>" class="cart-button ">
-	<span class="label"><?php _e('My Basket:', 'woothemes'); ?></span>
-	<?php echo $woocommerce->cart->get_cart_total();  ?>
-	<span class="items"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count); ?></span>
-	</a>
-	<?php
 }
 
 
