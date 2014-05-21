@@ -201,7 +201,7 @@ function sharonchin_widgets_init() {
 	if ( function_exists('register_sidebar') ) {
 		register_sidebar( array(
 			'name'			=>	__( 'Main Sidebar', 'sharonchin' ),
-			'id'			=>	'announcement',
+			'id'			=>	'main',
 			'before_widget'	=>	'<aside id="%1$s" class="widget well announcement %2$s">',
 			'after_widget'	=>	'</aside>',
 			'before_title'	=>	'<div class="nav-header">',
