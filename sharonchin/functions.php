@@ -200,67 +200,12 @@ function sharonchin_widgets_init() {
 
 	if ( function_exists('register_sidebar') ) {
 		register_sidebar( array(
-			'name'			=>	__( 'Announcement', 'sharonchin' ),
+			'name'			=>	__( 'Main Sidebar', 'sharonchin' ),
 			'id'			=>	'announcement',
 			'before_widget'	=>	'<aside id="%1$s" class="widget well announcement %2$s">',
 			'after_widget'	=>	'</aside>',
 			'before_title'	=>	'<div class="nav-header">',
 			'after_title'	=>	'</div>',
-		) );
-
-
-		register_sidebar( array(
-			'name'			=>	__( 'Personal Statement', 'sharonchin' ),
-			'id'			=>	'personal-statement',
-			'before_widget'	=>	'<aside id="%1$s" class="widget well personal-statement %2$s">',
-			'after_widget'	=>	'</aside>',
-			'before_title'	=>	'<h2 class="widget-title">',
-			'after_title'	=>	'</h2>',
-		) );
-
-		register_sidebar( array(
-			'name'			=>	__( 'Social Bar', 'sharonchin' ),
-			'id'			=>	'social-bar',
-			'before_widget'	=>	'<aside id="%1$s" class="widget well %2$s">',
-			'after_widget'	=>	'</aside>',
-			'before_title'	=>	'<h2 class="widget-title">',
-			'after_title'	=>	'</h2>',
-		) );
-
-		register_sidebar( array(
-			'name'			=>	__( 'Social Share Bar', 'sharonchin' ),
-			'id'			=>	'social-share-bar',
-			'before_widget'	=>	'<aside id="%1$s" class="widget well %2$s">',
-			'after_widget'	=>	'</aside>',
-			'before_title'	=>	'<h2 class="widget-title">',
-			'after_title'	=>	'</h2>',
-		) );
-
-		register_sidebar( array(
-			'name'			=>	__( 'Mailchimp', 'sharonchin' ),
-			'id'			=>	'mailchimp',
-			'before_widget'	=>	'<aside id="%1$s" class="widget well %2$s">',
-			'after_widget'	=>	'</aside>',
-			'before_title'	=>	'<h2 class="widget-title">',
-			'after_title'	=>	'</h2>',
-		) );
-
-		register_sidebar( array(
-			'name'			=>	__( 'Checkout Message', 'sharonchin' ),
-			'id'			=>	'checkout-message',
-			'before_widget'	=>	'',
-			'after_widget'	=>	'',
-			'before_title'	=>	'<header class="title"><h2>',
-			'after_title'	=>	'</h2></header>',
-		) );
-
-		register_sidebar( array(
-			'name'			=>	__( 'Shop Tools', 'sharonchin' ),
-			'id'			=>	'shop-tools',
-			'before_widget'	=>	'<aside id="%1$s" class="widget well %2$s">',
-			'after_widget'	=>	'</aside>',
-			'before_title'	=>	'<h2 class="widget-title">',
-			'after_title'	=>	'</h2>',
 		) );
 	}
 
