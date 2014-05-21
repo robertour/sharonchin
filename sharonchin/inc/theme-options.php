@@ -1,7 +1,7 @@
 <?php
 /** theme-options.php
  * 
- * Sharon Chin Theme Theme Options
+ * Sharon Chin Theme Options
  *
  * @author		Automattic, Konstantin Obenland
  * @package		Sharon Chin Theme
@@ -347,42 +347,6 @@ function sharonchin_donate_box() {
 }
 add_action( 'sharonchin_side_info_column', 'sharonchin_donate_box', 1 );
 
-
-/**
- * Displays a box with feed items and social media links
- * 
- * Props Joost de Valk, as this is almost entirely from his awesome WordPress
- * SEO Plugin
- * 
- * @link		http://plugins.trac.wordpress.org/browser/wordpress-seo/trunk/admin/yst_plugin_tools.php#L375
- * @copyright	Joost de Valk
- * @license		GPLv2 or later
- * 
- * @author		Joost de Valk, Konstantin Obenland
- * @since		1.3.0 - 06.04.2012
- *
- * @return		void
- */
-function sharonchin_feed_box() {
-	$rss_items = _sharonchin_fetch_feed( 'http://en.wp.obenland.it/feed/' );
-	?>
-	<div id="formatdiv" class="postbox">
-		<h3 class="hndle"><span><?php esc_html_e( 'News from Konstantin', 'sharonchin' ); ?></span></h3>
-		<div class="inside">
-			<ul>
-			<?php if ( ! $rss_items ) : ?>
-			<li><?php _e( 'No news items, feed might be broken...', 'sharonchin' ); ?></li>
-			<?php else :
-			foreach ( $rss_items as $item ) :
-				$url = preg_replace( '/#.*/', '#utm_source=wordpress&utm_medium=sidebannerpostbox&utm_term=rssitem&utm_campaign=sharonchin',  $item->get_permalink() ); ?>
-			<li><a class="rsswidget" href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $item->get_title() ); ?></a></li>
-			<?php endforeach; endif; ?>
-			</ul>
-		</div>
-	</div>
-	<?php
-}
-add_action( 'sharonchin_side_info_column', 'sharonchin_feed_box' );
 
 
 /**

@@ -3,7 +3,7 @@
  *
  * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
- * @since		3.0.0 - 13-03-2014
+ * @since		3.1.0 - 13-03-2014
  */
 
 
@@ -31,12 +31,8 @@ function sharonchin_setup() {
 	
 	add_theme_support( 'tha_hooks', array( 'all' ) );
 
-	if ( version_compare( get_bloginfo( 'version' ), '3.4', '<' ) )
-		// Custom Theme Options
-		require_once( get_template_directory() . '/inc/theme-options.php' );
-	else
-		// Implement the Theme Customizer script
-		require_once( get_template_directory() . '/inc/theme-customizer.php' );
+	// Implement the Theme Customizer script
+	require_once( get_template_directory() . '/inc/theme-customizer.php' );
 	
 	/**
 	 * Custom template tags for this theme.
@@ -178,12 +174,6 @@ function sharonchin_custom_background_setup() {
 	
 	add_theme_support( 'custom-background', $args );
 	
-	if ( ! function_exists( 'wp_get_theme' ) ) {
-		// Compat: Versions of WordPress prior to 3.4.
-		define( 'BACKGROUND_COLOR', $args['default-color'] );
-
-		add_theme_support( 'custom-background');
-	}
 }
 add_action( 'after_setup_theme', 'sharonchin_custom_background_setup' );
 
@@ -237,69 +227,9 @@ function sharonchin_register_scripts_styles() {
 		/**
 		 * Scripts
 		 */
-		wp_register_script(
-			'tw-bootstrap',
-			get_template_directory_uri() . "/js/bootstrap{$suffix}.js",
-			array('jquery'),
-			'2.0.3',
-			true
-		);
-		
-		wp_register_script(
-			'sharonchin',
-			get_template_directory_uri() . "/js/sharonchin{$suffix}.js",
-			array('tw-bootstrap'),
-			$theme_version,
-			true
-		);
-		
-		// Add masonry
-		wp_register_script(
-			'masonry',
-			get_stylesheet_directory_uri() . "/js/masonry.pkgd{$suffix}.js",
-			array('sharonchin'),
-			'3.0.0',
-			true
-		);
-		
-		// Add imagesloaded
-		wp_register_script(
-			'imagesloaded',
-			get_stylesheet_directory_uri() . "/js/imagesloaded.pkgd{$suffix}.js",
-			array('masonry'),
-			'3.0.0',
-			true
-		);
-		
-		// Add sharon
-		wp_register_script(
-			'sharon',
-			get_stylesheet_directory_uri() . "/js/sharon.js",
-//			array('imagesloaded'),
-			array('masonry'),
-			'3.0.0',
-			true
-		);
-		
 		
 				// Use less just in local server.
-		if ( $_SERVER["SERVER_ADDR"] === '127.0.0.1' ) {
-		
-			// Register the bootstrap.less
-			wp_register_script( 
-				'delete-cache', 
-				get_stylesheet_directory_uri() . '/js/delete_cache.js', 
-				array(), 
-				'2.3.2'
-			);
-			
-			// Register the less library (this should be done in localhost)
-			wp_register_script(
-				'lessjs', 
-				get_stylesheet_directory_uri() . '/js/less-1.4.1.min.js', 
-				array('delete-cache'), 
-				'1.4.1', 
-				false );
+		if( WP_DEBUG === true ){
 
 			// Register the bootstrap.less
 			wp_register_style( 
@@ -343,11 +273,18 @@ add_action( 'init', 'sharonchin_register_scripts_styles' );
  * @return	void
  */
 function sharonchin_print_scripts() {
+	$suffix = ( defined('SCRIPT_DEBUG') AND SCRIPT_DEBUG ) ? '' : '.min';
 
-	wp_enqueue_script( 'masonry' );
-	wp_enqueue_script( 'sharon' );
-	if ( $_SERVER["SERVER_ADDR"] === '127.0.0.1' ) {
-		wp_enqueue_script('lessjs');
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script('tw-bootstrap', get_template_directory_uri() . "/js/bootstrap{$suffix}.js");
+	wp_enqueue_script('sharonchin', get_template_directory_uri() . "/js/sharonchin{$suffix}.js");
+	wp_enqueue_script( 'masonry' , get_stylesheet_directory_uri() . "/js/masonry.pkgd{$suffix}.js");
+	wp_enqueue_script('imagesloaded', get_stylesheet_directory_uri() . "/js/imagesloaded.pkgd{$suffix}.js");
+	wp_enqueue_script('sharon', get_stylesheet_directory_uri() . "/js/sharon.js");
+
+	if( WP_DEBUG === true ){
+		wp_enqueue_script( 'delete-cache', get_stylesheet_directory_uri() . '/js/delete_cache.js');
+		wp_enqueue_script('lessjs', get_stylesheet_directory_uri() . '/js/less-1.4.1.min.js');
 		wp_enqueue_style('lesscss');
 	} else {
 		wp_enqueue_style('sharon-bootstrap');
@@ -1145,69 +1082,6 @@ function sharonchin_version() {
 }
 
 
-/**
- * Register the archive taxonomy
- * @author	Roberto Ulloa
- */
-function sharonchin_archive_custom_taxonomies(){
-	register_taxonomy(
-		'archive',
-		'archive',
-		array(
-			'hierarchical' => true,
-			'label' => 'Sharon Archive',
-			'query_var' => true,
-			'show_admin_column' => true,
-			'rewrite' => array( 'with_front' => true )
-		)
-	);
-	register_taxonomy(
-		'archive-post-format',
-		'archive',
-		array(
-			'hierarchical' => true,
-			'label' => 'Archive Post Format',
-			'query_var' => true,
-			'show_admin_column' => true,
-			'rewrite' => array( 'with_front' => true )
-		)
-	);
-}
-add_action('init', 'sharonchin_archive_custom_taxonomies', 0);
-
-/**
- * Add 'active' when we are in the archive of news or menu
- *
- * @author	Roberto Ulloa
- * @since	1.0.0 - 10.07.2013
- *
- * @return wp_rewrite Rewrite rules handled by Wordpress
- */
-add_filter( 'nav_menu_css_class', 'sharonchin_add_custom_class', 10, 2 );
-function sharonchin_add_custom_class( $classes = array(), $menu_item = false ) {
-
-    global $wp_query;
-
-    $classes[] = $menu_item->title;
-    if ( strpos($menu_item->post_name, 'news') !== false && ! in_array( 'current-menu-item', $classes ) && get_query_var('post_type') === 'news') {
-        $classes[] += 'current-menu-item';
-    } else if ( strpos($menu_item->post_name, 'blog') !== false && ! in_array( 'current-menu-item', $classes ) && (is_home() || is_archive() && ! get_query_var('post_type') === 'news'|| is_single() && 'post' === get_post_type())) {
-        $classes[] += 'current-menu-item';
-    } else if ( strpos($menu_item->post_name, 'shop') !== false && ! in_array( 'current-menu-item', $classes ) && get_query_var('post_type') === 'product') {
-        $classes[] += 'current-menu-item';
-    } else if ( strpos($menu_item->post_name, 'archive') !== false && ! in_array( 'current-menu-item', $classes ) ){
-        if (get_query_var('post_type') === 'archive') {
-            $classes[] += 'current-menu-item';
-        } else if (is_page()){
-            if (get_post_meta( $wp_query->get_queried_object_id(), '_wp_page_template', true ) === 'templates/page-event.php'){
-                $classes[] += 'current-menu-item';
-            }
-        }
-    }
-
-    return $classes;
-}
-
 
 /**
  * Related with a bug discussed in this post
@@ -1225,151 +1099,6 @@ function sharonchin_wpse_71157_parse_query( $wp_query )
 add_action( 'parse_query', 'sharonchin_wpse_71157_parse_query' );
 
 
-/**
- * Rewrite the permalink for archive to include the archive taxonoamy
- * @return $permalink The pretty-url of the post
- */
-add_filter( 'post_type_link', 'sharonchin_custom_post_permalink', 10, 4 );
-function sharonchin_custom_post_permalink( $permalink, $post, $leavename, $sample ) {
-
-    // only do our stuff if we're using pretty permalinks
-    // and if it's our target post type
-    if ( $post->post_type == 'archive' && get_option( 'permalink_structure' ) ) {
-        // remember our desired permalink structure here
-        // we need to generate the equivalent with real data
-        // to match the rewrite rules set up from before
-
-        $struct = '/%post_type%/%category%/%postname%/';
-
-        $rewritecodes = array(
-            '%post_type%',
-            '%category%',
-            '%postname%'
-        );
-
-        // setup data
-        //$terms = get_the_terms($post->ID, 'category');
-        //$terms = get_the_terms($post->ID, 'archive');
-
-        // this code is from get_permalink()
-        $category = '';
-
-//        if ( strpos($permalink, '%category%') !== false ) {
-            //$cats = get_the_category($post->ID);
-            $cats = get_the_terms($post->ID, 'archive');
-
-            if ( $cats ) {
-                usort($cats, '_usort_terms_by_ID'); // order by ID
-                $category = $cats[0]->slug;
-#                if ( $parent = $cats[0]->parent )
-#                    $category = get_category_parents($parent, false, '/', true) . $category;
-            }
-            // show default category in permalinks, without
-            // having to assign it explicitly
-            if ( empty($category) ) {
-                $default_category = get_category( get_option( 'default_category' ) );
-                $category = is_wp_error( $default_category ) ? '' : $default_category->slug;
-            }
-//        }
-
-        $replacements = array(
-            $post->post_type,
-            $category,
-            $post->post_name
-        );
-
-        // finish off the permalink
-        $permalink = home_url( str_replace( $rewritecodes, $replacements, $struct ) );
-        $permalink = user_trailingslashit($permalink, 'single');
-    }
-
-    return $permalink;
-}
-
-
-/**
- * Custom post type specific rewrite rules
- * @return wp_rewrite Rewrite rules handled by Wordpress
- */
-function sharonchin_cpt_rewrite_rules($wp_rewrite) {
-	$rules = sharonchin_cpt_generate_date_archives('news', $wp_rewrite);
-	$rules = $rules + sharonchin_cpt_generate_date_archives('archive', $wp_rewrite);
-	$wp_rewrite->rules = $rules + $wp_rewrite->rules;
-	echo '<div id="message" class="updated"><p><h1>Date Archive Rules Re-Generated</h1></p></div>';
-	return $wp_rewrite;
-}
-add_action('generate_rewrite_rules', 'sharonchin_cpt_rewrite_rules');
-
-
-/**
- * Generate date archive rewrite rules for a given custom post type
- * @param  string $cpt		slug of the custom post type
- * @return rules			  returns a set of rewrite rules for Wordpress to handle
- */
-function sharonchin_cpt_generate_date_archives($cpt, $wp_rewrite) {
-	$rules = array();
-
-	$post_type = get_post_type_object($cpt);
-	$slug_archive = $post_type->has_archive;
-	if ($slug_archive === false) return $rules;
-	if ($slug_archive === true) {
-		$slug_archive = $post_type->name;
-	}
-
-	$dates = array(
-		array(
-			'rule' => "([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})",
-			'vars' => array('year', 'monthnum', 'day')),
-		array(
-			'rule' => "([0-9]{4})/([0-9]{1,2})",
-			'vars' => array('year', 'monthnum')),
-		array(
-			'rule' => "([0-9]{4})",
-			'vars' => array('year'))
-		);
-
-	$rules[$slug_archive."/?$"] = 'index.php?post_type='.$slug_archive;
-
-	foreach ($dates as $data) {
-		$rule = $slug_archive.'/'.$data['rule'];
-		$query = 'index.php?post_type='.$slug_archive;
-
-		$rule_taxonomy = $slug_archive.'/(.+)/'.$data['rule'];
-		$query_taxonomy = 'index.php?post_type='.$slug_archive.'&taxonomy='.$slug_archive.'&field=slug&term='.$wp_rewrite->preg_index(1);
-
-		$i = 1;
-		foreach ($data['vars'] as $var) {
-			$query.= '&'.$var.'='.$wp_rewrite->preg_index($i);
-			$query_taxonomy.= '&'.$var.'='.$wp_rewrite->preg_index($i+1);
-			$i++;
-		}
-
-		$rules[$rule."/?$"] = $query;
-		$rules[$rule."/feed/(feed|rdf|rss|rss2|atom)/?$"] = $query."&feed=".$wp_rewrite->preg_index($i);
-		$rules[$rule."/(feed|rdf|rss|rss2|atom)/?$"] = $query."&feed=".$wp_rewrite->preg_index($i);
-		$rules[$rule."/page/([0-9]{1,})/?$"] = $query."&paged=".$wp_rewrite->preg_index($i);
-
-		$rules[$rule_taxonomy."/?$"] = $query_taxonomy;
-		$rules[$rule_taxonomy."/feed/(feed|rdf|rss|rss2|atom)/?$"] = $query_taxonomy."&feed=".$wp_rewrite->preg_index($i);
-		$rules[$rule_taxonomy."/(feed|rdf|rss|rss2|atom)/?$"] = $query_taxonomy."&feed=".$wp_rewrite->preg_index($i);
-		$rules[$rule_taxonomy."/page/([0-9]{1,})/?$"] = $query_taxonomy."&paged=".$wp_rewrite->preg_index($i);
-	}
-
-	if ($slug_archive === 'archive'){
-		$query_taxonomy = 'index.php?post_type='.$slug_archive.'&taxonomy='.$slug_archive.'&field=slug&term='.$wp_rewrite->preg_index(1);
-		$rules[$slug_archive.'/([a-zA-Z]+)/?$'] = $query_taxonomy;
-		$rules[$slug_archive."/(?!page)([a-zA-Z]+)/page/([0-9]{1,})/?$"] = $query_taxonomy."&paged=".$wp_rewrite->preg_index(2);
-		$rules[$slug_archive.'/(?!page)([a-zA-Z]+)/([a-zA-Z0-9-_]+)/?$'] = 'index.php?archive='.$wp_rewrite->preg_index(2).'&post_type='.$slug_archive.'&taxonomy='.$slug_archive.'&field=slug&term='.$wp_rewrite->preg_index(1);
-	}
-
-#	if ($slug_archive === 'archive'){
-#		$rules[$slug_archive.'/([a-zA-Z]+)/?$'] = 'index.php?post_type='.$slug_archive.'&taxonomy='.$slug_archive.'&field=slug&term='.$wp_rewrite->preg_index(1);
-#		$rules[$slug_archive.'/([a-zA-Z]+)/(.+)/?$'] = 'index.php?archive='.$wp_rewrite->preg_index(2).'&post_type='.$slug_archive.'&taxonomy='.$slug_archive.'&field=slug&term='.$wp_rewrite->preg_index(1);
-#		
-#	}
-
-	return $rules;
-}
 
 
 /* End of file functions.php */

@@ -1,10 +1,10 @@
-# Sharon Chin Theme
+# Sharon Chin
 
 Contributors:		robertour, kobenland
 Tags:				white, light, two-columns, left-sidebar, right-sidebar, flexible-width, custom-header, custom-background, threaded-comments, translation-ready, microformats, custom-menu, post-formats, sticky-posts
-Requires at least:	3.5.0
-Tested up to:		3.8.0
-Stable tag:			3.0.2
+Requires at least:	3.4.0
+Tested up to:		3.9.0
+Stable tag:			3.1
 
 A WordPress Theme based on Bootstrap, from Twitter
 
@@ -12,7 +12,7 @@ A WordPress Theme based on Bootstrap, from Twitter
 
 The Theme is 100% responsive - you do not need a seperate mobile-Theme with this layout.
 It has a seperate Sidebar just for image pages, to make it a special place to show your pictures!
-Sharon Chin Theme is fully compatible with WordPress SEO by Yoast! 
+Sharon Chin is fully compatible with WordPress SEO by Yoast! 
 
 Please note:
 

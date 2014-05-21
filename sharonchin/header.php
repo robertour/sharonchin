@@ -17,7 +17,6 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<title><?php wp_title( '&laquo;', true, 'right' ); ?></title>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<?php tha_head_top(); ?>
 		<?php tha_head_bottom(); ?>
 		<?php wp_head(); ?>

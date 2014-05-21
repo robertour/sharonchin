@@ -3,7 +3,7 @@ Contributors:		robertour, kobenland
 Tags:				white, light, two-columns, left-sidebar, right-sidebar, flexible-width, custom-header, custom-background, threaded-comments, translation-ready, microformats, custom-menu, post-formats, sticky-posts
 Requires at least:	3.5.0
 Tested up to:		3.8.0
-Stable tag:			3.0.2
+Stable tag:			3.1.0
 
 A WordPress Theme based on Bootstrap, from Twitter
 
@@ -70,13 +70,17 @@ For more information on SemVer, please visit [http://semver.org/].
 
 == Changelog ==
 
+= 3.1.0 =
+Remove support for News and Archive in order to be approved as a Wordpress
+Time.
+
 = 3.0.0 =
 Sharon Chin Theme is a for of The Bootstrap by Konstantin Obenland but I ll keep the version sequence.
 This are the major inclusions to this theme:
 * Sharon Chin Design: http://sharonchin.com
 * Updated Twitter Bootstrap to 2.3.2
 * Inclusion of masory.js:  http://masonry.desandro.com/
-* Support for two Custom Post Types: news and archive. There is a plugin in https://github.com/robertour/sharonchin. 
+* Github: https://github.com/robertour/sharonchin. 
 * CSS less files included
 
 = 2.0.1 =
