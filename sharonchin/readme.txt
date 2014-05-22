@@ -1,6 +1,6 @@
 === Sharon Chin Theme ===
 Contributors:		robertour, kobenland
-Tags:				white, light, two-columns, left-sidebar, right-sidebar, flexible-width, custom-header, custom-background, threaded-comments, translation-ready, microformats, custom-menu, post-formats, sticky-posts
+Tags:				white, custom-background, custom-header, custom-menu, featured-images, flexible-header, fluid-layout, full-width-template, left-sidebar,  post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, two-columns, responsive-layout
 Requires at least:	3.5.0
 Tested up to:		3.8.0
 Stable tag:			3.1.0
