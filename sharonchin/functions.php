@@ -31,6 +31,8 @@ function sharonchin_setup() {
 	
 	add_theme_support( 'tha_hooks', array( 'all' ) );
 
+	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'chat', 'video', 'image', 'link', 'list-item', 'quote', 'status' ) );
+
 	// Implement the Theme Customizer script
 	require_once( get_template_directory() . '/inc/theme-customizer.php' );
 	

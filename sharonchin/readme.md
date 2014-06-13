@@ -2,9 +2,9 @@
 
 Contributors:		robertour, kobenland
 Tags:				white, light, two-columns, left-sidebar, right-sidebar, flexible-width, custom-header, custom-background, threaded-comments, translation-ready, microformats, custom-menu, post-formats, sticky-posts
-Requires at least:	3.4.0
+Requires at least:	3.8.0
 Tested up to:		3.9.0
-Stable tag:			3.1
+Stable tag:			3.1.1
 
 A WordPress Theme based on Bootstrap, from Twitter
 

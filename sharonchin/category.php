@@ -54,7 +54,7 @@ get_header(); ?>
 </section><!-- #primary -->
 
 <?php
-get_sidebar('archive');
+get_sidebar();
 wp_reset_query();
 get_footer();
 

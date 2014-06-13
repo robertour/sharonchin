@@ -1,9 +1,9 @@
 === Sharon Chin Theme ===
 Contributors:		robertour, kobenland
 Tags:				white, custom-background, custom-header, custom-menu, featured-images, flexible-header, fluid-layout, full-width-template, left-sidebar,  post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, two-columns, responsive-layout
-Requires at least:	3.5.0
-Tested up to:		3.8.0
-Stable tag:			3.1.0
+Requires at least:	3.8.0
+Tested up to:		3.9.0
+Stable tag:			3.1.1
 
 A WordPress Theme based on Bootstrap, from Twitter
 
