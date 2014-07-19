@@ -6,6 +6,7 @@
  * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
  * @since		3.0.0 - 05.03.2013
+ * @updated		3.1.3 - 19.07.2014
  */
 
 
@@ -27,7 +28,7 @@ tha_entry_before(); ?>
 				</a>
 				<?php } ?>
 				<div class="media-body <?php echo $has_image; ?>">
-					<?php $art_type = get_art_type(get_the_ID()); ?>
+					<?php $art_type = sharonchin_get_art_type(get_the_ID()); ?>
 					<div class="media-crumbs">
 						<?php echo $art_type . ' &gt; ' . strval(get_the_date( 'Y' ));?>
 					</div>

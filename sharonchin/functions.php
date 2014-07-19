@@ -4,6 +4,7 @@
  * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
  * @since		3.1.0 - 13-03-2014
+ * @updated		3.1.3 - 19.07.2014
  */
 
 
@@ -85,25 +86,6 @@ function sharonchin_setup() {
 } // sharonchin_setup
 endif;
 add_action( 'after_setup_theme', 'sharonchin_setup' );
-
-
-
-/**
-More sizes options to insert in blog posts_per_page
-**/
-function sharonchin_insert_custom_image_sizes( $sizes ) {
-  global $_wp_additional_image_sizes;
-  if ( empty($_wp_additional_image_sizes) )
-    return $sizes;
-
-  foreach ( $_wp_additional_image_sizes as $id => $data ) {
-    if ( !isset($sizes[$id]) )
-      $sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
-  }
-
-  return $sizes;
-}
-add_filter( 'image_size_names_choose', 'sharonchin_insert_custom_image_sizes' );
 
 
 /**

@@ -30,7 +30,7 @@ get_header(); ?>
 					</div>
 				</div> <!-- #row -->
 			</div> <!-- .content -->
-			<? 
+			<?php 
 			sharonchin_content_nav( 'nav-below' );
 		else :
 			get_template_part( '/partials/content', 'not-found' );

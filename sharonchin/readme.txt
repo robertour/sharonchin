@@ -1,34 +1,51 @@
-=== Sharon Chin Theme ===
+=== Sharon Chin ===
+
 Contributors:		robertour, kobenland
-Tags:				white, custom-background, custom-header, custom-menu, featured-images, flexible-header, fluid-layout, full-width-template, left-sidebar,  post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, two-columns, responsive-layout
+Tags:				white, light, two-columns, left-sidebar, right-sidebar, flexible-width, custom-header, custom-background, threaded-comments, translation-ready, microformats, custom-menu, post-formats, sticky-posts
 Requires at least:	3.8.0
 Tested up to:		3.9.0
-Stable tag:			3.1.1
+Stable tag:			3.1.3
 
-A WordPress Theme based on Bootstrap, from Twitter
 
 == Description ==
 
-The Theme is 100% responsive - you do not need a seperate mobile-Theme with this layout.
-It has a seperate Sidebar just for image pages, to make it a special place to show your pictures!
-Sharon Chin Theme is fully compatible with WordPress SEO by Yoast!
+This theme combines [Twitter Bootstrap 2.3.2](http://getbootstrap.com/2.3.2/)
+and [Masonry](http://masonry.desandro.com/) to create a lilypad effect to list
+the Posts.
 
-Please note:
+It is 100% responsive - no need for mobile version. 
 
-Due to design restrictions in Bootstrap, the navigation menu can "only" be three levels deep, while parent menu items only serves as a headline for the child menu items and can not be accessed over the navigation menu.
-The Footer Menu is best suitable for short menues with just a few links. It replaces the credits section, once a menu has been assigned to the location.
-To take advantage of all the possibilites Bootstrap has to offer, Bootstrap requires jQuery 1.7, which does not come with WordPress versions prior to 3.3.0. Consider adding a plugin that provides the lates version of jQuery, if you want to use this Theme with WordPress 3.2.1 or lower.
+
+= Credits =
+
+This theme was designed by the Malaysian artist 
+[Sharon Chin](http://www.sharonchin.com), content strategized by [Maryann Tan] 
+(https://twitter.com/sultan88) and coded by 
+[Roberto Ulloa](http://robertour.com)
+
 
 = License =
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public Licemse.
-The exceptions to this license are as follows:
+
+Unless otherwise specified, all the theme files, scripts and images are licensed
+under [GNU General Public License Version 3](http://www.gnu.org/copyleft/gpl.html). 
+The exceptions to this license are the bundled resources, which licenses are 
+specified in the next section.
+
+
+= Bundled Resources Licenses =
+
 * Bootstrap by Twitter are licensed under the GPL-compatible 
 [Apache License 2](http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0)
-* html5shiv is licensed under MIT
-* masonry is licensed under MIT
-* less.js is licensed under [Apache License 2](http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0)
-* Respond.js: Copyright 2011: Scott Jehl, scottjehl.com. Dual licensed under 
-the MIT or GPL Version 2 licenses.
+* html5shiv is dual licensed under 
+[MIT](http://opensource.org/licenses/mit-license.php) or 
+[GPL Version 2](http://www.gnu.org/licenses/gpl-2.0.html)
+* masonry is licensed under [MIT](http://desandro.mit-license.org/)
+* less.js is licensed under 
+[Apache License 2](http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0)
+* Respond.js: Copyright 2011: Scott Jehl, scottjehl.com. is dual licensed under 
+[MIT](http://opensource.org/licenses/mit-license.php) or 
+[GPL Version 2](http://www.gnu.org/licenses/gpl-2.0.html)
+
 
 = Translations =
 Currently available in:
@@ -43,6 +60,7 @@ Partial support to:
 * Hungarian
 * Japanese
 * Russian
+
 
 == Installation ==
 
@@ -69,6 +87,24 @@ For more information on SemVer, please visit [http://semver.org/].
 
 
 == Changelog ==
+
+= 3.1.3 =
+Fixed: 
+* Namespace custom functions
+* image_size_name_choose callback is Plugin territory 
+* Bundled resources must be explicitly listed in readme or license file, with copyright/license attribution
+
+= 3.1.1 =
+Fixed: 
+* Upload header image overlaps sitename and description
+* Page Markup And Formatting, tables without any css styles
+* Buttons with different styles, sometime default bootstrap buttons appear.
+* Post Format: Video not working
+* Post Format: Gallery displayed not correctly
+* If collapse browser window, header looks not very good. Mobile icon appear but hide only search form, header image too small.
+Add the same grid for posts on search result page.
+
+
 
 = 3.1.0 =
 Remove support for News and Archive in order to be approved as a Wordpress

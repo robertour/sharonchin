@@ -1,3 +1,23 @@
+Unless otherwise specified, all the theme files, scripts and images are licensed
+under [GNU General Public License Version 3](http://www.gnu.org/copyleft/gpl.html). 
+The exceptions to this license are the bundled resources, which licenses are 
+specified as follows:
+
+* Bootstrap by Twitter are licensed under the GPL-compatible 
+[Apache License 2](http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0)
+* html5shiv is dual licensed under 
+[MIT](http://opensource.org/licenses/mit-license.php) or 
+[GPL Version 2](http://www.gnu.org/licenses/gpl-2.0.html)
+* masonry is licensed under [MIT](http://desandro.mit-license.org/)
+* less.js is licensed under 
+[Apache License 2](http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0)
+* Respond.js: Copyright 2011: Scott Jehl, scottjehl.com. is dual licensed under 
+[MIT](http://opensource.org/licenses/mit-license.php) or 
+[GPL Version 2](http://www.gnu.org/licenses/gpl-2.0.html)
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 

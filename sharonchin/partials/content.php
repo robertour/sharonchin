@@ -6,6 +6,7 @@
  * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
  * @since		3.0.0 - 05.03.2013
+ * @updated		3.1.3 - 19.07.2014
  */
 
 
@@ -74,8 +75,8 @@ tha_entry_before(); ?>
 	</div>
 
 	<?php
-	$related_art = get_related_art($post);
-	$related_posts = get_related($post, array('post', 'news'));
+	$related_art = sharonchin_get_related_art($post);
+	$related_posts = sharonchin_get_related($post, array('post', 'news'));
 	if ($related_art or $related_posts) {
 	?>
 		<div class="related top-splitter">
