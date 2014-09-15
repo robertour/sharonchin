@@ -257,18 +257,15 @@ add_action( 'init', 'sharonchin_register_scripts_styles' );
  * @return	void
  */
 function sharonchin_print_scripts() {
-	$suffix = ( defined('SCRIPT_DEBUG') AND SCRIPT_DEBUG ) ? '' : '.min';
-
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script('tw-bootstrap', get_template_directory_uri() . "/js/bootstrap{$suffix}.js");
-	wp_enqueue_script('sharonchin', get_template_directory_uri() . "/js/sharonchin{$suffix}.js");
-	wp_enqueue_script( 'masonry' , get_stylesheet_directory_uri() . "/js/masonry.pkgd{$suffix}.js");
-	wp_enqueue_script('imagesloaded', get_stylesheet_directory_uri() . "/js/imagesloaded.pkgd{$suffix}.js");
+	wp_enqueue_script('tw-bootstrap', get_template_directory_uri() . "/js/external/bootstrap.min.js");
+	wp_enqueue_script( 'masonry' , get_stylesheet_directory_uri() . "/js/external/masonry.pkgd.min.js");
+	wp_enqueue_script('imagesloaded', get_stylesheet_directory_uri() . "/js/external/imagesloaded.pkgd.min.js");
 	wp_enqueue_script('sharon', get_stylesheet_directory_uri() . "/js/sharon.js");
 
 	if( WP_DEBUG === true ){
 		wp_enqueue_script( 'delete-cache', get_stylesheet_directory_uri() . '/js/delete_cache.js');
-		wp_enqueue_script('lessjs', get_stylesheet_directory_uri() . '/js/less-1.4.1.min.js');
+		wp_enqueue_script('lessjs', get_stylesheet_directory_uri() . '/js/external/less.min.js');
 		wp_enqueue_style('lesscss');
 	} else {
 		wp_enqueue_style('sharon-bootstrap');
@@ -314,8 +311,8 @@ add_filter( 'style_loader_tag', 'sharonchin_enqueue_less_styles', 5, 2);
 function sharonchin_print_ie_scripts() {
 	?>
 	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.min.js" type="text/javascript"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js" type="text/javascript"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/external/html5shiv.min.js" type="text/javascript"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/external/respond.min.js" type="text/javascript"></script>
 	<![endif]-->
 	<?php
 }
@@ -507,7 +504,7 @@ function sharonchin_comments_list() {
 			<?php sharonchin_comment_nav(); ?>
 		
 			<ol class="commentlist unstyled">
-				<?php wp_list_comments( array( 'callback' => 'sharonchin_comment' ) ); ?>
+				<?php wp_list_comments(); ?>
 			</ol><!-- .commentlist .unstyled -->
 		
 			<?php sharonchin_comment_nav(); ?>
