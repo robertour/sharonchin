@@ -4,7 +4,7 @@
  * @author		Roberto Ulloa
  * @package		Sharon Chin Theme
  * @since		3.1.0 - 13-03-2014
- * @updated		3.1.3 - 19.07.2014
+ * @updated		3.2.1 - 16.11.2014
  */
 
 
@@ -212,7 +212,7 @@ function sharonchin_register_scripts_styles() {
 		 * Scripts
 		 */
 		
-				// Use less just in local server.
+		// Use less just in local server.
 		if( WP_DEBUG === true ){
 
 			// Register the bootstrap.less
@@ -258,8 +258,9 @@ add_action( 'init', 'sharonchin_register_scripts_styles' );
  */
 function sharonchin_print_scripts() {
 	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'jquery-masonry' );
 	wp_enqueue_script('tw-bootstrap', get_template_directory_uri() . "/js/external/bootstrap.min.js");
-	wp_enqueue_script( 'masonry' , get_stylesheet_directory_uri() . "/js/external/masonry.pkgd.min.js");
+	//wp_enqueue_script( 'masonry' , get_stylesheet_directory_uri() . "/js/external/masonry.pkgd.min.js");
 	wp_enqueue_script('imagesloaded', get_stylesheet_directory_uri() . "/js/external/imagesloaded.pkgd.min.js");
 	wp_enqueue_script('sharon', get_stylesheet_directory_uri() . "/js/sharon.js");
 

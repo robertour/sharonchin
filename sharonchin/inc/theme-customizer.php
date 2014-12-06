@@ -39,6 +39,7 @@ function sharonchin_customize_register( $wp_customize ) {
 			'default'		=>	sharonchin_options()->$setting,
 			'type'			=>	'option',
 			'transport'		=>	'postMessage',
+			'sanitize_callback' => 'esc_url_raw',
 		) );
 	}
 	

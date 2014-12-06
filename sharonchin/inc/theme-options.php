@@ -6,6 +6,7 @@
  * @author		Automattic, Konstantin Obenland
  * @package		Sharon Chin Theme
  * @since		1.3.0 - 06.04.2012
+ * @updated		3.2.1 - 17.11.2014
  */
 
 
@@ -244,13 +245,13 @@ function sharonchin_settings_field_radio( $args ) {
  *
  * @author	Automattic
  * @since	1.3.0 - 06.04.2012
+ * @updated     3.2.1
  * 
  * @return	void
  */
 function sharonchin_theme_options_render_page() {
 	?>
 	<div class="wrap">
-		<?php screen_icon(); ?>
 		<h2><?php esc_html_e( 'Sharon Chin Theme Theme Options', 'sharonchin' ); ?></h2>
 		<?php settings_errors(); ?>
 
